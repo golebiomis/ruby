@@ -4,7 +4,7 @@ before_action :set_skill , :only => [:show, :edit, :destroy, :update]
 
 
   def index
-    @skills = Skill.all
+    @skills = Skill.search(params[:search])
     respond_to do |format|
       format.html #index.html
       format.json { render json: @skills}

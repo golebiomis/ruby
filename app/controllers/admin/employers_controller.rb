@@ -4,7 +4,7 @@ before_action :set_employer, :only => [:show, :edit, :destroy, :update]
 
 
   def index
-    @employers = Employer.all
+    @employers = Employer.search(params[:search])
     respond_to do |format|
       format.html #index.html
       format.json { render json: @employers }

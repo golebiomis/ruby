@@ -15,4 +15,14 @@ validates :PESEL,  length: {is: 11}
       def text(s)
         s.description(/\n/, '<br>')
       end
+      def self.search(search)
+if search
+  @employers = Employer.where(["surname LIKE ?","%#{search}%"])
+else
+all
+
+end
+
+      end
+
 end

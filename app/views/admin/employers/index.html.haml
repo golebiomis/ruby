@@ -1,6 +1,14 @@
 - flash.each do |name, msg|
   = content_tag :div, msg, class: "alert alert-#{name}"
 
+
+.col-md-4
+  = form_tag admin_employers_path, :method => 'get', :id => "employers_search", class: 'input-group' do
+    = text_field_tag :search, params[:search], class: 'form-control'
+    %span.input-group-btn
+      = submit_tag "Szukaj", :name => nil, class: "btn btn-default"
+%br
+%br
 .panel.panel-default
   -content_for :breadcrumb do
     %li.activ= t('admin.employers.all')
