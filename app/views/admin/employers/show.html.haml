@@ -1,0 +1,27 @@
+
+%br
+.panel.panel-default
+  .panel-heading
+    = @employer
+  .panel-body
+    = "Imię"
+    %p.lead= @employer.name
+
+    = "Nazwisko"
+    %p.lead= @employer.surname
+
+    = "Numer"
+    %p.lead= @employer.phone
+
+    = "Adres"
+    %p.lead= @employer.address
+
+    = "Pesel"
+    %p.lead= @employer.PESEL
+
+    = "Opis"
+    %p.lead= @employer.description
+
+    = "Umiejętności"
+    - @employer.skills.each do |d|
+      %p.lead= d

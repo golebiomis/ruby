@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  phone: 1
+  address: MyString
+  PESEL: 1
+  skill_id: 1
+
+two:
+  name: MyString
+  phone: 1
+  address: MyString
+  PESEL: 1
+  skill_id: 1

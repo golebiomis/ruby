@@ -1,0 +1,39 @@
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: "alert alert-#{name}"
+.panel.panel-default
+  -content_for :breadcrumb do
+    %li.activ= t('admin.skills.all')
+
+
+
+
+
+  .panel-heading
+    Lista Umiejętności
+
+  .panel-body
+
+
+    .col-sm-12
+      %table.table
+        %thead
+          %tr
+            %th
+              ID
+            %th
+              Umiejętność
+            %th
+              Akcje
+        %tbody
+        - @skills.each do |skill|
+          %tr
+            %td
+              = skill.id
+            %td
+              = skill.name
+            %td
+
+
+              = link_to raw('<button type="button" class="btn btn-default">zobacz</button>'), admin_skill_path(skill)
+              = link_to raw('<button type="button" class="btn btn-info">edytuj</button>'), edit_admin_skill_path(skill)
+              = link_to raw('<button type="button" class="btn btn-danger">usuń</button>'), admin_skill_path(skill), method: :delete, data: { confirm: 'Jesteś pewien?' }

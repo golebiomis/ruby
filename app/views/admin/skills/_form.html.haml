@@ -1,0 +1,12 @@
+.panel.panel-default
+
+  .panel-heading
+    Dane umiejętności
+
+  .panel-body
+
+    = bootstrap_form_for @skill, inline_errors: false, :url => url do |f|
+      = f.alert_message "Wskazane pole/pola wymagają twojej uwagi."
+      = f.text_field :name
+      = f.text_area :description
+      = f.submit "Dodaj", class: "btn btn-success"

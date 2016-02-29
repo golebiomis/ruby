@@ -1,0 +1,55 @@
+pl:
+  buttons:
+    register: "zapisz"
+  admin:
+    menu:
+      dashboard: "Panel"
+      employers: "Pracownicy"
+      skills: "Umiejętności"
+    employers:
+      all: "Lista pracowników"
+      new: "Dodaj pracownika"
+      edit: "Edytuj pracownika"
+      employer: "Pracownik"
+      index: "Lista pracowników"
+
+    skills:
+      new: "Dodaj nową umiejętność"
+      all: "Lista umiejętności"
+      edit: "Edytuj umiejętność"
+      skill: "Umiejętność"
+      index: "Lista umiejętności"
+      name: "Nazwa"
+
+  activerecord:
+      errors:
+        models:
+          employer:
+            attributes:
+              name:
+                blank: "puste"
+                too_short: "musi posiadać minimum 3 znaki"
+              surname:
+                blank: "puste"
+                too_short: "musi posiadać minimum 2 znaki"
+              phone:
+                blank: "puste"
+                too_short: "musi posiadać minimum 7 znaków"
+                too_long: "za długi, musi posiadać maximum  9 znaków"
+              address:
+                blank: "puste"
+                too_short: "musi posiadać minimum 5 znaków"
+              PESEL:
+                blank: "puste"
+                wrong_length: "zła długość, musi posiadać 11 znaków"
+
+
+          skill:
+              attributes:
+                name:
+                  blank: "puste"
+                  too_short: "musi posiadac minimum 7 znaków"
+          user:
+            attributes:
+              password:
+                too_short: "musi posiadać minimum 5 znaków"

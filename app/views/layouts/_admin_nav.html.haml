@@ -1,0 +1,35 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    / Brand and toggle get grouped for better mobile display
+    .navbar-header
+      %button.navbar-toggle.collapsed{"aria-expanded" => "false", "data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"} Panel administracyjny do zarzadzanie pracownikami
+    / Collect the nav links, forms, and other content for toggling
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      %ul.nav.navbar-nav.navbar-right
+        %li
+          %a{:href => "#"} Link
+        - if user_signed_in?
+          %li.dropdown
+            %a.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
+              = current_user.email
+              %span.caret
+                %ul.dropdown-menu
+                  %li
+                    %a{:href => "#"} Action
+                  %li
+                    %a{:href => "#"} Another action
+                  %li
+                    = link_to "Edytuj profil", edit_user_registration_path, :method => :get
+                  %li.divider
+                  %li
+                    = link_to "Wyloguj", destroy_user_session_path, :method => :delete
+        - else
+          %li
+            = link_to "Zarejestruj nowe konto", new_user_registration_path, :method => :get
+          %li
+            = link_to "Zaloguj się", new_user_session_path, :method => :get

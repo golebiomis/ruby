@@ -1,0 +1,6 @@
+-content_for :breadcrumb do
+  %li
+    = link_to t('admin.skill.index'), admin_skills_path
+  %li.activ= @skill.name
+
+= render 'admin/skills/form', :url => admin_skill_path(@skill)

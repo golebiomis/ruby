@@ -1,0 +1,6 @@
+-content_for :breadcrumb do
+  %li
+    = link_to t('admin.employers.index'), admin_employers_path
+  %li.activ= @employer.name
+
+= render 'admin/employers/form', :url => admin_employer_path(@employer)

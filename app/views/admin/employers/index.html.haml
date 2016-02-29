@@ -1,0 +1,28 @@
+- flash.each do |name, msg|
+  = content_tag :div, msg, class: "alert alert-#{name}"
+
+.panel.panel-default
+  -content_for :breadcrumb do
+    %li.activ= t('admin.employers.all')
+
+  .panel-heading
+    Lista pracowników
+  .panel-body
+
+
+    .col-sm-12
+      %table.table
+        %thead
+          %tr
+            %th Imię
+            %th Umiejętność
+            %th Akcje
+        %tbody
+        - @employers.each do |employer|
+          %tr
+            %td= link_to employer , admin_employer_path(employer)
+            %td= employer.skills.map(&:name).sort.join(", ")
+            %td
+              = link_to raw('<button type="button" class="btn btn-default">zobacz</button>'), admin_employer_path(employer)
+              = link_to raw('<button type="button" class="btn btn-info">edytuj</button>'), edit_admin_employer_path(employer)
+              = link_to raw('<button type="button" class="btn btn-danger">usuń</button>'), admin_employer_path(employer), method: :delete,data: { confirm: 'Jesteś pewien?' }

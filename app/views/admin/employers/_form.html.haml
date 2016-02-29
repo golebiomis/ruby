@@ -1,0 +1,17 @@
+.panel.panel-default
+
+  .panel-heading
+    Dane pracownika
+
+  .panel-body
+
+    = bootstrap_form_for @employer, inline_errors: false, :url => url do |f|
+      = f.alert_message "Wskazane pole/pola wymagają twojej uwagi."
+      = f.text_field :name
+      = f.text_field :surname
+      = f.text_field :phone
+      = f.text_field :address
+      = f.text_field :PESEL
+      = f.text_area :description
+      = f.collection_check_boxes :skill_ids, Skill.all, :id, :name
+      = f.submit "Dodaj", class: "btn btn-success"
