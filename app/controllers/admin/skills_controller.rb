@@ -2,6 +2,9 @@ class Admin::SkillsController < AdminController
 
 before_action :set_skill , :only => [:show, :edit, :destroy, :update]
 
+def page
+  @employers = Employer.all
+end
 
   def index
     @skills = Skill.search(params[:search])

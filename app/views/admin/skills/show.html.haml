@@ -10,3 +10,6 @@
     %p.lead= @skill.name
     = "Opis"
     %p.lead= @skill.description
+    = "Posiadacze"
+    - @skill.employers.each do |d|
+      %p.lead= d
